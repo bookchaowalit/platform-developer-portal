@@ -27,4 +27,5 @@ C4Container
 Sources: `packages/app/package.json`, `packages/backend/package.json`, `packages/backend/Dockerfile`, `packages/backend/src/features.ts`, `app-config.yaml`, `app-config.production.yaml`, `package.json`, `PRODUCT.md`
 
 ## Open questions
+
 - Postgres instance สำหรับ production (ยังไม่ provision)

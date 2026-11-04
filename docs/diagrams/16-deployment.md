@@ -35,4 +35,5 @@ flowchart TB
 Sources: `PRODUCT.md`, `README.md`, `package.json`, `packages/backend/package.json` (`build-image`), `packages/backend/Dockerfile`, `app-config.yaml`, `app-config.production.yaml`
 
 ## Open questions
+
 - hosting target, domain และ secret store สำหรับ production (ยังไม่ตัดสินใจ)

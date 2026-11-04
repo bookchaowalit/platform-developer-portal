@@ -41,6 +41,7 @@ flowchart TD
 Sources: `docs/UPGRADE-PLAN.md`, `DOCPACK/00-product-card.md`, `PRODUCT.md`
 
 ## Open questions
+
 - จะใช้ Backstage ต่อ หรือคง `repository-catalog` เป็น catalog หลัก (product card ข้อ 8.2 ยังรอพิจารณา)
 - ถ้า host: ที่ไหน (Railway / container อื่น), Postgres ที่ไหน, domain อะไร
 - เส้นตาย "archive ภายใน 3 เดือน" นับจาก 2026-10-08 (วันที่ product card) ใช่หรือไม่

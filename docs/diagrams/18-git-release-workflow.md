@@ -39,4 +39,5 @@ flowchart LR
 Sources: `git log origin/main` (16 commits, 2026-09-06 → 2026-10-23), `gh pr list --state all`, `gh api repos/bookchaowalit/platform-developer-portal/branches/main/protection`, `.github/workflows/ci.yml`, `renovate.json`
 
 ## Open questions
+
 - จะตั้ง branch protection / required check `verify` บน `main` หรือไม่

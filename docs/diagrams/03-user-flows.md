@@ -48,5 +48,6 @@ flowchart TD
 Sources: `packages/app/src/App.tsx`, `packages/app/src/modules/nav/Sidebar.tsx`, `packages/app/src/modules/signIn/SignInPage.tsx`, `packages/app/src/modules/signIn/providers.ts`, `packages/app/src/modules/home/homeModule.tsx`, `packages/app/package.json`, `app-config.yaml`, `app-config.production.yaml`, `examples/entities.yaml`, `examples/template/template.yaml`, `packages/app/e2e-tests/app.test.ts`, `README.md`
 
 ## Open questions
+
 - widget Getting Started ใน `homeModule.tsx` ลิงก์ไป `/catalog` แต่ catalog ถูกย้ายไป `/` — ลิงก์นี้ยังใช้ได้หรือไม่ (ยังไม่ได้ตรวจใน browser)
 - path ของ home page ไม่ได้ override ใน config (ใช้ default ของ `plugin-home`); ยังไม่ได้ยืนยันใน app ที่รันจริง

@@ -4,30 +4,30 @@
 
 repo นี้คือ **Backstage developer portal** (Backstage `1.55.3`, Yarn 4 monorepo: `packages/app` + `packages/backend`) ที่ยังใกล้ upstream scaffold: catalog โหลดเฉพาะ entity ตัวอย่าง, sign-in guest (dev) / GitHub OAuth (production config), permission allow-all, **รันบนเครื่อง owner เท่านั้น ไม่มี hosted deploy** ทุก diagram มี `Sources:` และ "Open questions" ข้อมูล runtime ที่ไม่อยู่ใน repo อ้าง `gh` CLI (read-only, 2026-11-04) และ `platform-ci-workflows` (read-only) ไม่พบ ops record หรือ central architecture doc ที่อ้างถึง repo นี้
 
-| # | Item | Status | File | Sources read |
-|---|---|---|---|---|
-| 01 | Business process (As-Is / To-Be) | done | [01-business-process.md](01-business-process.md) | README.md, PRODUCT.md, UPGRADE-PLAN.md, DOCPACK card, app-config.yaml, features.ts, template.yaml |
-| 02 | Use cases | done | [02-use-cases.md](02-use-cases.md) | features.ts, routeAccess.test.ts, appConfig.test.ts, providers.ts, app-config*.yaml, org.yaml |
-| 03 | User flows | done | [03-user-flows.md](03-user-flows.md) | App.tsx, Sidebar.tsx, SignInPage.tsx, providers.ts, homeModule.tsx, template.yaml, e2e app.test.ts |
-| 04 | Traceability (RTM) | done (no specs/; backlog gaps marked) | [04-traceability.md](04-traceability.md) | PRODUCT.md, UPGRADE-PLAN.md, all test files, ci.yml |
-| 05 | C4 Context | done | [05-c4-context.md](05-c4-context.md) | app-config*.yaml, features.ts, ci.yml, PRODUCT.md |
-| 06 | C4 Container | done | [06-c4-container.md](06-c4-container.md) | packages/*/package.json, Dockerfile, features.ts, app-config*.yaml |
-| 07 | C4 Component (backend) | done | [07-c4-component.md](07-c4-component.md) | index.ts, features.ts, app-config.yaml, template.yaml, modules/** |
-| 08 | ADRs (5) | done | [08-adr/](08-adr/) | backstage.json, App.tsx, features.ts, app-config*.yaml, PRODUCT.md, ci.yml, scanner configs |
-| 09 | ERD | done (catalog entity model; plugin tables are upstream) | [09-erd.md](09-erd.md) | examples/*.yaml, app-config*.yaml, catalog-info.yaml |
-| 10 | Sequences (4) | done | [10-sequences.md](10-sequences.md) | signIn/*, features.ts, app-config*.yaml, template.yaml, examples |
-| 11 | State machines | done (sign-in selection + template steps; no repo-owned status field) | [11-state-machines.md](11-state-machines.md) | providers.ts, SignInPage.tsx, template.yaml, entities.yaml |
-| 12 | API and integrations | done | [12-api-integration.md](12-api-integration.md) | routeAccess.test.ts, features.ts, app-config*.yaml, README.md |
-| 13 | Threat model (DFD + STRIDE) | done | [13-threat-model.md](13-threat-model.md) | app-config*.yaml, features.ts, tests, ci.yml, scanner configs, gh branch protection API |
-| 14 | Backup / DR | done (nothing persisted at runtime; RTO/RPO not defined) | [14-backup-dr.md](14-backup-dr.md) | app-config*.yaml, README.md, PRODUCT.md |
-| 15 | CI/CD pipeline | done (CI only, no CD) | [15-cicd-pipeline.md](15-cicd-pipeline.md) | ci.yml, platform-ci-workflows security.yml @87dc5e1, renovate.json, gh run list |
-| 16 | Deployment | done (local only; production config not provisioned) | [16-deployment.md](16-deployment.md) | PRODUCT.md, Dockerfile, package.json files, app-config*.yaml |
-| 17 | Test coverage matrix | done | [17-test-coverage-matrix.md](17-test-coverage-matrix.md) | all test files, playwright.config.ts, ci.yml, UPGRADE-PLAN.md |
-| 18 | Git / release workflow | done | [18-git-release-workflow.md](18-git-release-workflow.md) | git log --graph, gh pr list, gh branch protection API, renovate.json |
-| 19 | Service dependency map | done | [19-service-dependency-map.md](19-service-dependency-map.md) | app-config*.yaml, features.ts, package.json files, .yarnrc.yml |
-| 20 | Observability | done (logs + CI only; Sentry waived) | [20-observability.md](20-observability.md) | PRODUCT.md, features.ts, ci.yml, renovate.json, gh run list |
-| 21 | Incident response | done (GitHub-only alerting; no hosted runtime) | [21-incident-response.md](21-incident-response.md) | ci.yml, renovate.json, scanner configs, gh run view, git log |
-| 22 | DORA | done (no deployments: 3 metrics not computable, CI proxies shown) | [22-dora.md](22-dora.md) | git log, gh run list, gh pr list, PRODUCT.md |
+| #   | Item                             | Status                                                                | File                                                         | Sources read                                                                                       |
+| --- | -------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| 01  | Business process (As-Is / To-Be) | done                                                                  | [01-business-process.md](01-business-process.md)             | README.md, PRODUCT.md, UPGRADE-PLAN.md, DOCPACK card, app-config.yaml, features.ts, template.yaml  |
+| 02  | Use cases                        | done                                                                  | [02-use-cases.md](02-use-cases.md)                           | features.ts, routeAccess.test.ts, appConfig.test.ts, providers.ts, app-config\*.yaml, org.yaml     |
+| 03  | User flows                       | done                                                                  | [03-user-flows.md](03-user-flows.md)                         | App.tsx, Sidebar.tsx, SignInPage.tsx, providers.ts, homeModule.tsx, template.yaml, e2e app.test.ts |
+| 04  | Traceability (RTM)               | done (no specs/; backlog gaps marked)                                 | [04-traceability.md](04-traceability.md)                     | PRODUCT.md, UPGRADE-PLAN.md, all test files, ci.yml                                                |
+| 05  | C4 Context                       | done                                                                  | [05-c4-context.md](05-c4-context.md)                         | app-config\*.yaml, features.ts, ci.yml, PRODUCT.md                                                 |
+| 06  | C4 Container                     | done                                                                  | [06-c4-container.md](06-c4-container.md)                     | packages/_/package.json, Dockerfile, features.ts, app-config_.yaml                                 |
+| 07  | C4 Component (backend)           | done                                                                  | [07-c4-component.md](07-c4-component.md)                     | index.ts, features.ts, app-config.yaml, template.yaml, modules/\*\*                                |
+| 08  | ADRs (5)                         | done                                                                  | [08-adr/](08-adr/)                                           | backstage.json, App.tsx, features.ts, app-config\*.yaml, PRODUCT.md, ci.yml, scanner configs       |
+| 09  | ERD                              | done (catalog entity model; plugin tables are upstream)               | [09-erd.md](09-erd.md)                                       | examples/_.yaml, app-config_.yaml, catalog-info.yaml                                               |
+| 10  | Sequences (4)                    | done                                                                  | [10-sequences.md](10-sequences.md)                           | signIn/_, features.ts, app-config_.yaml, template.yaml, examples                                   |
+| 11  | State machines                   | done (sign-in selection + template steps; no repo-owned status field) | [11-state-machines.md](11-state-machines.md)                 | providers.ts, SignInPage.tsx, template.yaml, entities.yaml                                         |
+| 12  | API and integrations             | done                                                                  | [12-api-integration.md](12-api-integration.md)               | routeAccess.test.ts, features.ts, app-config\*.yaml, README.md                                     |
+| 13  | Threat model (DFD + STRIDE)      | done                                                                  | [13-threat-model.md](13-threat-model.md)                     | app-config\*.yaml, features.ts, tests, ci.yml, scanner configs, gh branch protection API           |
+| 14  | Backup / DR                      | done (nothing persisted at runtime; RTO/RPO not defined)              | [14-backup-dr.md](14-backup-dr.md)                           | app-config\*.yaml, README.md, PRODUCT.md                                                           |
+| 15  | CI/CD pipeline                   | done (CI only, no CD)                                                 | [15-cicd-pipeline.md](15-cicd-pipeline.md)                   | ci.yml, platform-ci-workflows security.yml @87dc5e1, renovate.json, gh run list                    |
+| 16  | Deployment                       | done (local only; production config not provisioned)                  | [16-deployment.md](16-deployment.md)                         | PRODUCT.md, Dockerfile, package.json files, app-config\*.yaml                                      |
+| 17  | Test coverage matrix             | done                                                                  | [17-test-coverage-matrix.md](17-test-coverage-matrix.md)     | all test files, playwright.config.ts, ci.yml, UPGRADE-PLAN.md                                      |
+| 18  | Git / release workflow           | done                                                                  | [18-git-release-workflow.md](18-git-release-workflow.md)     | git log --graph, gh pr list, gh branch protection API, renovate.json                               |
+| 19  | Service dependency map           | done                                                                  | [19-service-dependency-map.md](19-service-dependency-map.md) | app-config\*.yaml, features.ts, package.json files, .yarnrc.yml                                    |
+| 20  | Observability                    | done (logs + CI only; Sentry waived)                                  | [20-observability.md](20-observability.md)                   | PRODUCT.md, features.ts, ci.yml, renovate.json, gh run list                                        |
+| 21  | Incident response                | done (GitHub-only alerting; no hosted runtime)                        | [21-incident-response.md](21-incident-response.md)           | ci.yml, renovate.json, scanner configs, gh run view, git log                                       |
+| 22  | DORA                             | done (no deployments: 3 metrics not computable, CI proxies shown)     | [22-dora.md](22-dora.md)                                     | git log, gh run list, gh pr list, PRODUCT.md                                                       |
 
 ## ADRs (retro-documented)
 

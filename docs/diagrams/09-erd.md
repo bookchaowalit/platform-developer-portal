@@ -46,4 +46,5 @@ kind ที่ catalog รับ: `Component, System, API, Resource, Location` (
 Sources: `examples/entities.yaml`, `examples/org.yaml`, `examples/template/template.yaml`, `app-config.yaml` (`catalog.rules`, `catalog.locations`), `app-config.production.yaml`, `catalog-info.yaml`, `packages/backend/package.json`
 
 ## Open questions
+
 - ตาราง upstream ใดที่จะต้อง backup เมื่อมี Postgres จริง (ขึ้นกับ plugin version ตอน provision)

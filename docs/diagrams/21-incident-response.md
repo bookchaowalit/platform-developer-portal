@@ -22,5 +22,6 @@ flowchart TD
 Sources: `.github/workflows/ci.yml`, `renovate.json`, `osv-scanner.toml`, `.trivyignore.yaml`, `docs/UPGRADE-PLAN.md`, `gh run list` / `gh run view` (2026-11-04), `git log origin/main`
 
 ## Open questions
+
 - เมื่อ host แล้ว: alert จะเข้า Telegram เหมือน service อื่นหรือไม่ และ postmortem เก็บที่ไหน
 - run `38219648436` (2026-10-12) fail โดยไม่มีข้อมูล step — สาเหตุ (runner / setup) ไม่ทราบ

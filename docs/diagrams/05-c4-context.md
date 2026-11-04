@@ -23,4 +23,5 @@ C4Context
 Sources: `app-config.yaml`, `app-config.production.yaml`, `packages/backend/src/features.ts`, `.github/workflows/ci.yml`, `PRODUCT.md`, `README.md`
 
 ## Open questions
+
 - MCP client ใดจะใช้ MCP actions จริง (ไม่มี config ฝั่ง client ใน repo)
