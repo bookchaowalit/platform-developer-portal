@@ -121,3 +121,53 @@ reason = """uuid <11.1.1 missing buffer bounds check in v3/v5/v6 when a caller p
 Fixed only in 11.x+. Old majors come from transitive deps (sockjs, @material-table/core, gaxios, \
 google-gax, teeny-request, dockerode, mockttp) that call uuid v1()/v4() without a caller-supplied \
 buffer (checked in node_modules), so the affected v3/v5/v6 buf path is not used. Waiting on those packages to move to uuid 11+."""
+
+[[IgnoredVulns]]
+id = "GHSA-xcx6-jx8p-x3h5"
+ignoreUntil = 2026-11-30T00:00:00Z
+reason = """@azure/msal-node 6.x auth_code flow can send extra parameters to an attacker-chosen \
+endpoint; fixed in 7.1.0. Only path: @backstage/backend-defaults / @backstage/integration -> \
+@azure/identity 4.14.0 (msal-node ^6). @azure/identity 4.14.1 moves to msal-node ^7.1.0 but was \
+published 2026-10-29, inside the 7-day npmMinimalAgeGate in .yarnrc.yml. The portal configures no \
+Azure integration and never calls acquireTokenByCode. Bump @azure/identity (yarn up -R) once the \
+age gate allows it, then drop this entry."""
+
+[[IgnoredVulns]]
+id = "GHSA-gcqx-w48m-w2h4"
+ignoreUntil = 2027-01-17T00:00:00Z
+reason = """deepmerge <=4.3.1 mergeObject() prototype poisoning of the returned object. No fixed \
+release exists. Runtime user: swagger-client in the api-docs plugin (browser), merging OpenAPI \
+definitions that come from this portal's own catalog entities, not anonymous request input. Other \
+users are build/test tooling (jest-config, fork-ts-checker, @rollup/plugin-node-resolve). Re-check \
+when deepmerge ships a fix."""
+
+[[IgnoredVulns]]
+id = "GHSA-3g3m-2fjr-6pw4"
+ignoreUntil = 2026-12-04T00:00:00Z
+reason = """glob 10.x/13.x keeps walking the file system after an AbortSignal fires; fixed only in \
+14.0.2 (new major, published 2026-10-27). glob ^13 is pinned by @backstage/cli*, \
+@backstage/plugin-catalog-backend, cacache and ts-json-schema-generator; glob ^10 by jest 30, \
+@rollup/plugin-commonjs and archiver-utils. None of the Backstage callers pass a signal to glob \
+(checked in node_modules), so the bypassed cancel path is not used; patterns come from this repo's \
+config, not request input. Not forcing a major across Backstage packages. Re-check when Backstage \
+moves to glob 14."""
+
+[[IgnoredVulns]]
+id = "GHSA-g3hv-75wg-m249"
+ignoreUntil = 2026-12-04T00:00:00Z
+reason = """minimatch pattern amplification DoS (globparts **/../ growth at optimizationLevel >= 2); \
+fixed only in 11.0.1 (new major, published 2026-10-27). minimatch ^10 is pinned by \
+@backstage/backend-defaults, plugin-auth-backend, plugin-catalog-backend, mcp-actions-backend and \
+typescript-eslint; ^3/^5/^9 by ESLint 8 plugins, glob 7/8/10 and dev tooling. The trigger is an \
+attacker-controlled pattern; every pattern here comes from app-config or repo files. A global \
+minimatch ^11 override broke ESLint 8 default-export callers before, so no override. Re-check \
+when Backstage moves to minimatch 11."""
+
+[[IgnoredVulns]]
+id = "GHSA-mrhx-c7xc-m3w5"
+ignoreUntil = 2027-01-17T00:00:00Z
+reason = """zod array validation collects one issue per failing element with no cap (memory DoS); \
+fixed in 4.6.6. The runtime zod is 4.6.7 (fixed). The remaining 3.25.76 copy is pinned (^3.25.76, \
+no 4.x allowed) only by @backstage/cli-module-auth and @backstage/cli-module-new, developer CLI \
+commands that validate local input, not the portal's request path. Re-check when those CLI modules \
+allow zod 4."""

@@ -18,3 +18,12 @@ vulnerabilities:
       basic-ftp 5.x (GHSA-c475-qrg2-pj4r), fixed only in 6.x. Path:
       @backstage/backend-openapi-utils -> mockttp -> pac-proxy-agent -> get-uri 6.
       The portal never connects to FTP servers. Waiting on get-uri/mockttp upstream.
+  - id: CVE-2026-109461
+    paths:
+      - yarn.lock
+    expired_at: 2026-11-30
+    statement: >-
+      @azure/msal-node 6.x (GHSA-xcx6-jx8p-x3h5), fixed in 7.1.0. Only via @azure/identity 4.14.0;
+      4.14.1 moves to msal-node ^7.1.0 but is still inside the 7-day npmMinimalAgeGate. The portal
+      configures no Azure integration and never calls acquireTokenByCode. Bump @azure/identity once
+      the age gate allows it, then drop this entry (see osv-scanner.toml).
