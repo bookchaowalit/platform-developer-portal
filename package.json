@@ -54,7 +54,10 @@
     "@yarnpkg/core/got": "^11.8.6",
     "@module-federation/dts-plugin/adm-zip": "0.6.1",
     "@module-federation/dts-plugin/undici": "7.30.1",
-    "refractor@npm:3.6.0/prismjs": "~1.30.0"
+    "refractor@npm:3.6.0/prismjs": "~1.30.0",
+    "get-uri/basic-ftp": "^6.2.1",
+    "mockttp/@graphql-tools/schema": "^10.0.31",
+    "mockttp/@graphql-tools/utils": "^12.0.3"
   },
   "prettier": "@backstage/cli/config/prettier",
   "lint-staged": {
