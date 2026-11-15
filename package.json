@@ -36,8 +36,8 @@
     "plugins/*"
   ],
   "devDependencies": {
-    "@backstage/cli": "^0.36.6",
-    "@backstage/cli-defaults": "^0.1.6",
+    "@backstage/cli": "^0.36.7",
+    "@backstage/cli-defaults": "^0.1.7",
     "@backstage/e2e-test-utils": "^0.1.2",
     "@jest/environment-jsdom-abstract": "~30.2.0",
     "@playwright/test": "^1.32.3",
@@ -57,7 +57,26 @@
     "refractor@npm:3.6.0/prismjs": "~1.30.0",
     "get-uri/basic-ftp": "^6.2.1",
     "mockttp/@graphql-tools/schema": "^10.0.31",
-    "mockttp/@graphql-tools/utils": "^12.0.3"
+    "mockttp/@graphql-tools/utils": "^12.0.3",
+    "minimatch@npm:^9.0.4": "^11.0.5",
+    "minimatch@npm:^10.2.1": "^11.0.5",
+    "minimatch@npm:^10.2.2": "^11.0.5",
+    "minimatch@npm:^10.2.6": "^11.0.5",
+    "glob@npm:^10.0.0": "^14.0.4",
+    "glob@npm:^10.3.10": "^14.0.4",
+    "glob@npm:^10.4.1": "^14.0.4",
+    "glob@npm:^13.0.0": "^14.0.4",
+    "glob@npm:^13.0.6": "^14.0.4",
+    "uuid@npm:^3.4.0": "^11.1.1",
+    "uuid@npm:^8.3.2": "^11.1.1",
+    "uuid@npm:^9.0.0": "^11.1.1",
+    "uuid@npm:^9.0.1": "^11.1.1",
+    "uuid@npm:^10.0.0": "^11.1.1",
+    "@trendyol-js/openstack-swift-sdk/file-type": "^21.3.4",
+    "@octokit/rest@npm:^19.0.3": "^20.1.2",
+    "@octokit/auth-app@npm:^4.0.0": "^6.1.4",
+    "@octokit/webhooks@npm:^10.9.2": "^12.3.2",
+    "@material-table/core@npm:^3.1.0": "patch:@material-table/core@npm%3A3.2.5#~/.yarn/patches/@material-table-core-npm-3.2.5-5a76f950c0.patch"
   },
   "prettier": "@backstage/cli/config/prettier",
   "lint-staged": {
