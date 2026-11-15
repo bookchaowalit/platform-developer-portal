@@ -76,7 +76,12 @@
     "@octokit/rest@npm:^19.0.3": "^20.1.2",
     "@octokit/auth-app@npm:^4.0.0": "^6.1.4",
     "@octokit/webhooks@npm:^10.9.2": "^12.3.2",
-    "@material-table/core@npm:^3.1.0": "patch:@material-table/core@npm%3A3.2.5#~/.yarn/patches/@material-table-core-npm-3.2.5-5a76f950c0.patch"
+    "@material-table/core@npm:^3.1.0": "patch:@material-table/core@npm%3A3.2.5#~/.yarn/patches/@material-table-core-npm-3.2.5-5a76f950c0.patch",
+    "deepmerge@npm:^4.3.1": "patch:deepmerge@npm%3A4.3.1#~/.yarn/patches/deepmerge-npm-4.3.1-4f751a0844.patch",
+    "deepmerge@npm:^4.2.2": "patch:deepmerge@npm%3A4.3.1#~/.yarn/patches/deepmerge-npm-4.3.1-4f751a0844.patch",
+    "deepmerge@npm:~4.3.0": "patch:deepmerge@npm%3A4.3.1#~/.yarn/patches/deepmerge-npm-4.3.1-4f751a0844.patch",
+    "elliptic@npm:^6.5.3": "patch:elliptic@npm%3A6.6.1#~/.yarn/patches/elliptic-npm-6.6.1-87bb857cbc.patch",
+    "elliptic@npm:^6.6.1": "patch:elliptic@npm%3A6.6.1#~/.yarn/patches/elliptic-npm-6.6.1-87bb857cbc.patch"
   },
   "prettier": "@backstage/cli/config/prettier",
   "lint-staged": {

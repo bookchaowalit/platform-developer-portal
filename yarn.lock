@@ -15742,10 +15742,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deepmerge@npm:^4.2.2, deepmerge@npm:^4.3.1, deepmerge@npm:~4.3.0":
+"deepmerge@npm:4.3.1":
   version: 4.3.1
   resolution: "deepmerge@npm:4.3.1"
   checksum: 10c0/e53481aaf1aa2c4082b5342be6b6d8ad9dfe387bc92ce197a66dea08bd4265904a087e75e464f14d1347cf2ac8afe1e4c16b266e0561cc5df29382d3c5f80044
+  languageName: node
+  linkType: hard
+
+"deepmerge@patch:deepmerge@npm%3A4.3.1#~/.yarn/patches/deepmerge-npm-4.3.1-4f751a0844.patch":
+  version: 4.3.1
+  resolution: "deepmerge@patch:deepmerge@npm%3A4.3.1#~/.yarn/patches/deepmerge-npm-4.3.1-4f751a0844.patch::version=4.3.1&hash=cda2a4"
+  checksum: 10c0/d6d06fbe165101253677268904bb62149feb3f0e5382bcf25eb41e8cf98cfaabe1972066524c7de3ba1924c5b4294531fd6f810e975806b1c7c85ea256eba663
   languageName: node
   linkType: hard
 
@@ -16233,7 +16240,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"elliptic@npm:^6.5.3, elliptic@npm:^6.6.1":
+"elliptic@npm:6.6.1":
   version: 6.6.1
   resolution: "elliptic@npm:6.6.1"
   dependencies:
@@ -16245,6 +16252,21 @@ __metadata:
     minimalistic-assert: "npm:^1.0.1"
     minimalistic-crypto-utils: "npm:^1.0.1"
   checksum: 10c0/8b24ef782eec8b472053793ea1e91ae6bee41afffdfcb78a81c0a53b191e715cbe1292aa07165958a9bbe675bd0955142560b1a007ffce7d6c765bcaf951a867
+  languageName: node
+  linkType: hard
+
+"elliptic@patch:elliptic@npm%3A6.6.1#~/.yarn/patches/elliptic-npm-6.6.1-87bb857cbc.patch":
+  version: 6.6.1
+  resolution: "elliptic@patch:elliptic@npm%3A6.6.1#~/.yarn/patches/elliptic-npm-6.6.1-87bb857cbc.patch::version=6.6.1&hash=a78d1e"
+  dependencies:
+    bn.js: "npm:^4.11.9"
+    brorand: "npm:^1.1.0"
+    hash.js: "npm:^1.0.0"
+    hmac-drbg: "npm:^1.0.1"
+    inherits: "npm:^2.0.4"
+    minimalistic-assert: "npm:^1.0.1"
+    minimalistic-crypto-utils: "npm:^1.0.1"
+  checksum: 10c0/edf60eda6c5956c7797495e7a906697e53bf45781274f4c9b639ed05b1c70f9668ad8bed800e31745f811f316f669cbdf5a1e55173bc8b95b2a3a1f03be02b4c
   languageName: node
   linkType: hard
 

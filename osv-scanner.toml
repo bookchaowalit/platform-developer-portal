@@ -8,10 +8,10 @@
 [[IgnoredVulns]]
 id = "GHSA-848j-6mx2-7j84"
 ignoreUntil = 2027-01-17T00:00:00Z
-reason = """elliptic 6.6.1 risky primitive implementation. No fixed release exists. Only reachable via \
-crypto-browserify (node-stdlib-browser polyfills in the Backstage CLI webpack/rspack build); the \
-portal does no ECDSA/ECDH signing or verification in the browser. Re-check when elliptic ships a fix \
-or Backstage drops the crypto polyfill."""
+reason = """elliptic 6.6.1 truncates RFC 6979 k by k's own byte length. No fixed release exists, so the \
+portal ships .yarn/patches/elliptic-npm-6.6.1-*.patch (truncate by n.byteLength() * 8, the upstream \
+fix shape); packages/backend/src/patchedDeps.test.ts checks it. The lockfile still says 6.6.1, so the \
+scanner keeps matching. Drop the patch and this ignore when elliptic ships a fix."""
 
 [[IgnoredVulns]]
 id = "GHSA-337j-9hxr-rhxg"
@@ -32,8 +32,7 @@ known debt until Backstage supports react-router 7."""
 [[IgnoredVulns]]
 id = "GHSA-gcqx-w48m-w2h4"
 ignoreUntil = 2027-01-17T00:00:00Z
-reason = """deepmerge <=4.3.1 mergeObject() prototype poisoning of the returned object. No fixed \
-release exists. Runtime user: swagger-client in the api-docs plugin (browser), merging OpenAPI \
-definitions that come from this portal's own catalog entities, not anonymous request input. Other \
-users are build/test tooling (jest-config, fork-ts-checker, @rollup/plugin-node-resolve). Re-check \
-when deepmerge ships a fix."""
+reason = """deepmerge <=4.3.1 mergeObject() copies an own "__proto__" key and so sets the result's \
+prototype. No fixed release exists, so the portal ships .yarn/patches/deepmerge-npm-4.3.1-*.patch \
+(getKeys() drops "__proto__"); packages/backend/src/patchedDeps.test.ts checks it. The lockfile \
+still says 4.3.1, so the scanner keeps matching. Drop the patch and this ignore when deepmerge ships a fix."""
