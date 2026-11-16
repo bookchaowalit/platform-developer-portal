@@ -16,18 +16,21 @@ scanner keeps matching. Drop the patch and this ignore when elliptic ships a fix
 [[IgnoredVulns]]
 id = "GHSA-337j-9hxr-rhxg"
 ignoreUntil = 2027-01-17T00:00:00Z
-reason = """react-router constructor injection in deserializeErrors() during SSR hydration; fixed only \
-in 7.18.0. The portal is a client-rendered SPA (no React Router framework/SSR mode), so the \
-vulnerable hydration path is not used. Backstage's frontend still requires react-router 6; a v7 \
-move must follow Backstage's own migration."""
+reason = """react-router <7.18.0 rebuilds any window constructor named in SSR hydration errors. \
+Backstage pins react-router 6 and 7.x breaks entity tab links, so the 7.18.0 fix (PR 15175: only \
+built-in Error subtypes) is backported to react-router-dom 6.30.6 in .yarn/patches/; \
+packages/app/src/reactRouterPatch.test.tsx checks it. The lock still says 6.30.6, so the scanner \
+keeps matching. Drop the patches and this ignore when Backstage supports react-router 7."""
 
 [[IgnoredVulns]]
 id = "GHSA-wrjc-x8rr-h8h6"
 ignoreUntil = 2027-01-17T00:00:00Z
-reason = """react-router open redirect via backslash paths in <Link>/useNavigate; fixed only in 7.18.0. \
-Backstage's frontend framework still requires react-router 6 (no 6.x fix exists). The app's own \
-routes are static; risk is limited to plugins navigating to attacker-supplied paths. Tracked as \
-known debt until Backstage supports react-router 7."""
+reason = """react-router <7.18.0 open redirect via backslash paths ("/\\evil") in <Link>/useNavigate. \
+Backstage pins react-router 6 and 7.x breaks entity tab links, so the 7.18.0 fix (PR 15176: [\\/]{2} \
+in ABSOLUTE_URL_REGEX, removeDoubleSlashes and protocol-relative checks) is backported to \
+@remix-run/router 1.23.4 and react-router-dom 6.30.6 in .yarn/patches/; \
+packages/app/src/reactRouterPatch.test.tsx checks it. The lock still says 6.30.6, so the scanner \
+keeps matching. Drop the patches and this ignore when Backstage supports react-router 7."""
 
 [[IgnoredVulns]]
 id = "GHSA-gcqx-w48m-w2h4"

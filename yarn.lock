@@ -8729,6 +8729,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@remix-run/router@patch:@remix-run/router@npm%3A1.23.4#~/.yarn/patches/@remix-run-router-npm-1.23.4-3931f898d4.patch":
+  version: 1.23.4
+  resolution: "@remix-run/router@patch:@remix-run/router@npm%3A1.23.4#~/.yarn/patches/@remix-run-router-npm-1.23.4-3931f898d4.patch::version=1.23.4&hash=589e56"
+  checksum: 10c0/f8b3c88f4ea869ce97f07e03fc9ce7055b389f74eb84c1b7957dca6fac94a646c218ecf9b8d2af4b47d9464762d2745ed97e75c4af3e55b5f7a9eaacb7fc61a7
+  languageName: node
+  linkType: hard
+
 "@remixicon/react@npm:>=4.6.0 <4.9.0":
   version: 4.8.0
   resolution: "@remixicon/react@npm:4.8.0"
@@ -26327,7 +26334,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.30.2":
+"react-router-dom@npm:6.30.6":
   version: 6.30.6
   resolution: "react-router-dom@npm:6.30.6"
   dependencies:
@@ -26337,6 +26344,19 @@ __metadata:
     react: ">=16.8"
     react-dom: ">=16.8"
   checksum: 10c0/57dbb2ae4ac787f78c4d10b764c1c5223635378033e33dda4e0a4417144ae847fb43dc98008075951826258287c27c67729ca713c90957cf2ecf9055561bdc2e
+  languageName: node
+  linkType: hard
+
+"react-router-dom@patch:react-router-dom@npm%3A6.30.6#~/.yarn/patches/react-router-dom-npm-6.30.6-59875718e5.patch":
+  version: 6.30.6
+  resolution: "react-router-dom@patch:react-router-dom@npm%3A6.30.6#~/.yarn/patches/react-router-dom-npm-6.30.6-59875718e5.patch::version=6.30.6&hash=1107b4"
+  dependencies:
+    "@remix-run/router": "npm:1.23.4"
+    react-router: "npm:6.30.6"
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 10c0/92ed824393dc21ea9c6333ac421a1ea73bd485f54d5a9df7a86b92fb7bb9e7368b4cfda2db4e28af3aee50bf2f410fe2d0422576557b2f0b373d4231997d22fc
   languageName: node
   linkType: hard
 
