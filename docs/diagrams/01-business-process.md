@@ -44,14 +44,14 @@ Sources: `docs/UPGRADE-PLAN.md`, `DOCPACK/00-product-card.md`, `PRODUCT.md`
 
 ## Gap
 
-| ID | As-Is → To-Be | Status | Owner | Evidence |
-|---|---|---|---|---|
-| G1 | รันบนเครื่อง owner เท่านั้น (SQLite in memory) → hosted deploy บน production config (Postgres + GitHub OAuth) | decide | owner | `docs/UPGRADE-PLAN.md` P0; `PRODUCT.md` (ยังไม่มี hosting target) |
-| G2 | ไม่มี catalog `User` entity ของ owner / ยังไม่ลงทะเบียน GitHub OAuth app → มีทั้งสอง | todo | owner | `docs/UPGRADE-PLAN.md` P0 |
-| G3 | catalog เป็น entity ตัวอย่างใน `examples/` → entity จริงของ Solo Empire + `org.yaml` จริง | todo | claude | `docs/UPGRADE-PLAN.md` P1; `DOCPACK/00-product-card.md` §7 |
-| G4 | permission policy allow-all → policy ขั้นต่ำเมื่อมี non-guest user | todo | claude | `docs/UPGRADE-PLAN.md` P1; `packages/backend/src/features.ts` |
-| G5 | ไม่มี frontend test ของ `modules/nav`; Playwright smoke ยังไม่รันใน CI → มีทั้งสอง | todo | claude | `docs/UPGRADE-PLAN.md` P1/P2 |
-| G6 | verdict `template` → `showcase` (generate catalog-info จาก registries) หรือ archive ภายใน 3 เดือน | decide | owner | `DOCPACK/00-product-card.md` §7, §8 |
+| ID  | As-Is → To-Be                                                                                                 | Status | Owner  | Evidence                                                          |
+| --- | ------------------------------------------------------------------------------------------------------------- | ------ | ------ | ----------------------------------------------------------------- |
+| G1  | รันบนเครื่อง owner เท่านั้น (SQLite in memory) → hosted deploy บน production config (Postgres + GitHub OAuth) | decide | owner  | `docs/UPGRADE-PLAN.md` P0; `PRODUCT.md` (ยังไม่มี hosting target) |
+| G2  | ไม่มี catalog `User` entity ของ owner / ยังไม่ลงทะเบียน GitHub OAuth app → มีทั้งสอง                          | todo   | owner  | `docs/UPGRADE-PLAN.md` P0                                         |
+| G3  | catalog เป็น entity ตัวอย่างใน `examples/` → entity จริงของ Solo Empire + `org.yaml` จริง                     | todo   | claude | `docs/UPGRADE-PLAN.md` P1; `DOCPACK/00-product-card.md` §7        |
+| G4  | permission policy allow-all → policy ขั้นต่ำเมื่อมี non-guest user                                            | todo   | claude | `docs/UPGRADE-PLAN.md` P1; `packages/backend/src/features.ts`     |
+| G5  | ไม่มี frontend test ของ `modules/nav`; Playwright smoke ยังไม่รันใน CI → มีทั้งสอง                            | todo   | claude | `docs/UPGRADE-PLAN.md` P1/P2                                      |
+| G6  | verdict `template` → `showcase` (generate catalog-info จาก registries) หรือ archive ภายใน 3 เดือน             | decide | owner  | `DOCPACK/00-product-card.md` §7, §8                               |
 
 ## Open questions
 
