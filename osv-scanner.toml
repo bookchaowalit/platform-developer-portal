@@ -39,3 +39,12 @@ reason = """deepmerge <=4.3.1 mergeObject() copies an own "__proto__" key and so
 prototype. No fixed release exists, so the portal ships .yarn/patches/deepmerge-npm-4.3.1-*.patch \
 (getKeys() drops "__proto__"); packages/backend/src/patchedDeps.test.ts checks it. The lockfile \
 still says 4.3.1, so the scanner keeps matching. Drop the patch and this ignore when deepmerge ships a fix."""
+
+[[IgnoredVulns]]
+id = "GHSA-6jcc-5g8w-32mx"
+ignoreUntil = 2027-01-17T00:00:00Z
+reason = """i18next <26.3.4 deepExtend() follows inherited built-ins when addResourceBundle(..., deep, \
+overwrite) merges a bundle. Fixed only in i18next 26; Backstage core-app-api, plugin-app and \
+frontend-test-utils pin ^22. The portal has no i18next code of its own: the only bundles merged are \
+the translation messages compiled into Backstage and our plugins, never user input. Reviewed \
+2026-11-27; drop when Backstage moves to i18next 26."""
